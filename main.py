@@ -26,7 +26,7 @@ def proxy(path):
     try:
         if request_headers["Library"] == "ScratchConnect.py":
             try:
-                response = get(path, params=dict(request.args))
+                response = get(path, params=dict(request.args), headers=headers)
                 raw_headers = response.raw.headers.items()
                 excluded_headers = ["content-encoding"]
                 headers = []
